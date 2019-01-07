@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 		local vehicleClass = GetVehicleClass(vehicle)
 		PlayerData = ESX.GetPlayerData()
 		
-		if vehicleClass == 18 and GetPedInVehicleSeat(vehicle, -1) == ped and PlayerData.job.name ~= 'police' then
+		if vehicleClass == 18 and GetPedInVehicleSeat(vehicle, -1) == ped and PlayerData.job.name ~= 'police' or PlayerData.job.name ~= 'ambulance' then
 			ClearPedTasksImmediately(ped)
 			TaskLeaveVehicle(ped,vehicle,0)
 			Citizen.Wait(250)
